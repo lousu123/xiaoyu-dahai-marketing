@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>小渔大海水产火锅 · 品牌全案营销方案</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Helvetica Neue',sans-serif;background:#F5F2ED;color:#1E293B;line-height:1.6;padding-bottom:80px}
+
+/* ===== Banner ===== */
+.banner{
+  min-height:60vh;background:linear-gradient(135deg,#0A1628 0%,#0B2B3C 40%,#1A4A4A 70%,#2A6B6B 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  padding:3rem 1.2rem 2rem;position:relative;overflow:hidden;
+}
+.banner::before{
+  content:'';position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(42,157,143,0.12) 0%,transparent 70%);
+  top:-200px;right:-150px;
+}
+.banner::after{
+  content:'';position:absolute;width:350px;height:350px;border-radius:50%;
+  background:radial-gradient(circle,rgba(233,196,74,0.06) 0%,transparent 70%);
+  bottom:-80px;left:-80px;
+}
+.banner-tag{
+  display:inline-block;background:rgba(233,196,74,0.15);border:1px solid #E9C46A;
+  color:#E9C46A;padding:0.25rem 1rem;border-radius:50px;font-size:0.7rem;letter-spacing:2px;margin-bottom:0.8rem;z-index:1;
+}
+.banner h1{
+  font-size:clamp(1.6rem,5.5vw,2.8rem);color:#fff;font-weight:800;line-height:1.25;z-index:1;
+}
+.banner h1 span{color:#E9C46A}
+.banner-sub{
+  font-size:clamp(0.8rem,2.5vw,1rem);color:rgba(255,255,255,0.5);margin-top:0.6rem;letter-spacing:3px;z-index:1;
+}
+.banner-info{
+  display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin-top:1.5rem;z-index:1;
+}
+.banner-info-item{text-align:center}
+.banner-info-num{font-size:1.4rem;font-weight:800;color:#E9C46A}
+.banner-info-label{font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:0.1rem}
+
+/* ===== Sticky Nav ===== */
+.nav{
+  position:sticky;top:0;z-index:100;
+  background:rgba(10,22,40,0.95);backdrop-filter:blur(15px);
+  padding:0.5rem 0.6rem;display:flex;gap:0.2rem;justify-content:center;flex-wrap:wrap;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.nav a{
+  color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.6rem;
+  padding:0.2rem 0.45rem;border-radius:5px;transition:all .3s;white-space:nowrap;
+}
+.nav a.active{color:#E9C46A;background:rgba(233,196,74,0.1)}
+
+/* ===== Section ===== */
+.section{padding:1.8rem 1rem}
+.section-tag{
+  display:inline-block;font-size:0.6rem;letter-spacing:1px;color:#2A9D8F;
+  background:rgba(42,157,143,0.08);padding:0.15rem 0.8rem;border-radius:15px;margin-bottom:0.4rem;
+}
+.section-title{
+  font-size:clamp(1.1rem,3.5vw,1.5rem);font-weight:700;color:#0B2B3C;margin-bottom:0.2rem;
+}
+.section-title::after{
+  content:'';display:block;width:35px;height:2.5px;
+  background:linear-gradient(90deg,#E76F51,#E9C46A);border-radius:2px;margin-top:4px;
+}
+.section-desc{color:#64748B;font-size:0.75rem;margin:0.4rem 0 1rem}
+
+/* ===== Card ===== */
+.card{
+  background:#fff;border-radius:12px;padding:1rem 1.1rem;margin-bottom:0.7rem;
+  box-shadow:0 1px 6px rgba(0,0,0,0.04);border:1px solid #E2E8F0;transition:all .3s;
+}
+.card-icon{font-size:1.3rem;margin-bottom:0.3rem}
+.card h4{font-size:0.85rem;color:#0B2B3C;margin-bottom:0.25rem;font-weight:600}
+.card p,.card li{font-size:0.75rem;color:#64748B;line-height:1.7}
+.card ul{padding-left:0.9rem;margin-top:0.25rem}
+.card ul li{margin-bottom:0.15rem}
+.card .tag{
+  display:inline-block;font-size:0.6rem;padding:0.08rem 0.45rem;border-radius:8px;
+  background:rgba(42,157,143,0.08);color:#2A9D8F;margin-right:0.15rem;margin-bottom:0.15rem;
+}
+.card.featured{border:2px solid rgba(42,157,143,0.25)}
+.card.featured.orange{border:2px solid rgba(231,111,81,0.25)}
+.card.coral{border:2px solid rgba(233,196,74,0.3)}
+
+/* ===== Store Bar ===== */
+.store-bar{display:flex;gap:0.5rem;flex-wrap:wrap;margin:0.8rem 0}
+.store-bar-item{
+  flex:1 1 calc(50% - 0.5rem);min-width:120px;background:#fff;border-radius:10px;
+  padding:0.8rem;text-align:center;box-shadow:0 1px 5px rgba(0,0,0,0.03);border:1px solid #E2E8F0;
+}
+.store-bar-item.new{border:2px solid rgba(233,196,74,0.35);background:linear-gradient(180deg,rgba(233,196,74,0.04),#fff)}
+.store-bar-name{font-weight:600;font-size:0.8rem;color:#0B2B3C}
+.store-bar-rating{font-size:0.7rem;margin:0.15rem 0}
+.store-bar-info{font-size:0.65rem;color:#64748B}
+
+/* ===== Data Grid ===== */
+.data-grid{display:flex;gap:0.5rem;flex-wrap:wrap;margin:0.8rem 0}
+.data-item{
+  flex:1;min-width:70px;background:#fff;border-radius:10px;padding:0.7rem 0.5rem;
+  text-align:center;box-shadow:0 1px 5px rgba(0,0,0,0.03);border:1px solid #E2E8F0;
+}
+.data-num{font-size:1.2rem;font-weight:800;background:linear-gradient(135deg,#0B2B3C,#2A9D8F);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.data-label{font-size:0.6rem;color:#64748B;margin-top:0.1rem}
+
+/* ===== Collapsible ===== */
+.collapse{display:none}
+.collapse.show{display:block}
+.collapse-btn{
+  display:block;width:100%;padding:0.6rem;text-align:center;font-size:0.75rem;color:#2A9D8F;
+  background:rgba(42,157,143,0.06);border:1px dashed rgba(42,157,143,0.2);border-radius:8px;
+  margin-bottom:0.7rem;cursor:pointer;font-weight:500;
+  -webkit-tap-highlight-color:transparent;
+}
+.collapse-btn:active{background:rgba(42,157,143,0.12)}
+
+/* ===== Dark Card ===== */
+.dark-card{
+  background:rgba(255,255,255,0.06);backdrop-filter:blur(8px);
+  border-radius:12px;padding:1rem 1.1rem;margin-bottom:0.7rem;border:1px solid rgba(255,255,255,0.08);
+}
+.dark-card h4{color:#E9C46A;font-size:0.85rem;margin-bottom:0.3rem}
+.dark-card p,.dark-card li{color:rgba(255,255,255,0.7);font-size:0.75rem;line-height:1.7}
+.dark-card ul{padding-left:0.9rem;margin-top:0.25rem}
+.dark-card ul li{margin-bottom:0.15rem}
+.dark-card.gold-border{border:2px solid #E9C46A}
+
+/* ===== Timeline ===== */
+.timeline{position:relative;padding-left:2.2rem}
+.timeline::before{content:'';position:absolute;left:9px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,#2A9D8F,#E76F51,#E9C46A)}
+.tl-item{
+  position:relative;background:#fff;border-radius:10px;padding:1rem 1rem;
+  margin-bottom:0.8rem;box-shadow:0 1px 6px rgba(0,0,0,0.03);border:1px solid #E2E8F0;
+}
+.tl-item::before{
+  content:attr(data-num);position:absolute;left:-1.65rem;top:0.9rem;
+  width:18px;height:18px;border-radius:50%;background:#2A9D8F;color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:0.55rem;font-weight:700;
+}
+.tl-item:nth-child(2)::before{background:#E76F51}
+.tl-item:nth-child(3)::before{background:#E9C46A;color:#0B2B3C}
+.tl-item h4{font-size:0.82rem;color:#0B2B3C;margin-bottom:0.15rem}
+.tl-item p{font-size:0.72rem;color:#64748B}
+.tl-item ul{margin-top:0.2rem;padding-left:0.9rem}
+.tl-item li{font-size:0.72rem;color:#64748B;margin-bottom:0.1rem}
+
+/* ===== Table ===== */
+.plan-table{width:100%;border-collapse:collapse;font-size:0.7rem;margin-top:0.8rem}
+.plan-table th{background:#0B2B3C;color:#fff;padding:0.5rem 0.4rem;text-align:left;font-weight:600;font-size:0.65rem}
+.plan-table td{padding:0.45rem 0.4rem;border-bottom:1px solid #E2E8F0}
+.plan-table tr:nth-child(even){background:rgba(42,157,143,0.03)}
+.plan-table .tag{display:inline-block;font-size:0.55rem;padding:0.05rem 0.35rem;border-radius:6px;margin-right:0.1rem}
+.plan-table .tag.online{background:rgba(42,157,143,0.1);color:#2A9D8F}
+.plan-table .tag.offline{background:rgba(231,111,81,0.1);color:#E76F51}
+
+/* ===== Footer ===== */
+.footer{
+  position:fixed;bottom:0;left:0;right:0;z-index:99;
+  background:#0A1628;padding:0.6rem 1rem;text-align:center;
+  box-shadow:0 -2px 15px rgba(0,0,0,0.2);
+}
+.footer p{color:rgba(255,255,255,0.4);font-size:0.65rem}
+.footer strong{color:#E9C46A}
+
+/* ===== Summary Box ===== */
+.summary-box{
+  background:#fff;border-radius:14px;padding:1.2rem;box-shadow:0 1px 10px rgba(0,0,0,0.04);border:1px solid #E2E8F0;
+}
+.summary-grid{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1rem}
+.summary-item h4{font-size:0.8rem;color:#0B2B3C;margin-bottom:0.2rem}
+.summary-item ul{padding-left:0.9rem;font-size:0.72rem;color:#64748B}
+.summary-item ul li{margin-bottom:0.1rem}
+
+.contact-box{
+  display:flex;flex-direction:column;gap:0.6rem;margin-top:0.8rem;
+}
+.contact-card{
+  flex:1;border-radius:10px;padding:0.8rem;border:1px solid #E2E8F0;
+}
+.contact-card h4{font-size:0.75rem;color:#0B2B3C;margin-bottom:0.2rem}
+.contact-card p{font-size:0.7rem;color:#64748B;line-height:1.6}
+
+/* ===== Highlights ===== */
+.highlight-bar{
+  background:linear-gradient(135deg,rgba(233,196,74,0.08),rgba(42,157,143,0.08));
+  border:1px solid rgba(233,196,74,0.2);border-radius:12px;padding:0.8rem 1rem;margin:0.8rem 0;
+  text-align:center;
+}
+.highlight-bar p{font-size:0.78rem;color:#0B2B3C;font-weight:500}
+
+/* ===== Price ===== */
+.price-row{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:0.8rem}
+.price-card{
+  flex:1;min-width:130px;background:#fff;border-radius:10px;padding:0.8rem;
+  text-align:center;box-shadow:0 1px 5px rgba(0,0,0,0.03);border:1px solid #E2E8F0;position:relative;
+}
+.price-card.featured{border:2px solid #E76F51}
+.price-card.featured::before{content:'主推';position:absolute;top:-8px;right:10px;background:#E76F51;color:#fff;padding:0.05rem 0.6rem;border-radius:10px;font-size:0.5rem;font-weight:600}
+.price-name{font-weight:600;font-size:0.78rem;color:#0B2B3C}
+.price-num{font-size:1.5rem;font-weight:800;color:#E76F51;margin:0.3rem 0}
+.price-num small{font-size:0.65rem;color:#64748B;font-weight:400}
+.price-desc{font-size:0.65rem;color:#64748B;margin-bottom:0.3rem}
+.price-tags{display:flex;gap:0.15rem;flex-wrap:wrap;justify-content:center}
+.price-tags span{background:rgba(42,157,143,0.08);color:#2A9D8F;padding:0.05rem 0.35rem;border-radius:6px;font-size:0.55rem}
+
+/* ===== Animations ===== */
+.fade-in{opacity:0;transform:translateY(12px);transition:all .4s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* ===== Dark Section ===== */
+.dark-section-bg{
+  background:linear-gradient(135deg,#0A1628 0%,#0B2B3C 50%,#1A4A4A 100%);
+  border-radius:16px;padding:1.5rem 1rem;margin:0.5rem;
+}
+.dark-section-bg .section-title{color:#fff}
+.dark-section-bg .section-title::after{background:linear-gradient(90deg,#E9C46A,#E76F51)}
+.dark-section-bg .section-desc{color:rgba(255,255,255,0.5)}
+</style>
+</head>
+<body>
+
+<!-- ===== Banner ===== -->
+<div class="banner">
+  <div class="banner-tag">🐟 小渔大海水产火锅 · 全案营销方案</div>
+  <h1>小渔大海<br><span>品牌全案营销</span></h1>
+  <div class="banner-sub">线上线下全链路 · 5店全域覆盖 · 旗舰会员锁客</div>
+  <div class="banner-info">
+    <div class="banner-info-item"><div class="banner-info-num">5</div><div class="banner-info-label">直营门店</div></div>
+    <div class="banner-info-item"><div class="banner-info-num">4.65</div><div class="banner-info-label">品牌均分</div></div>
+    <div class="banner-info-item"><div class="banner-info-num">4位1体</div><div class="banner-info-label">线上+线下+私域+会员</div></div>
+    <div class="banner-info-item"><div class="banner-info-num">90天</div><div class="banner-info-label">全面落地周期</div></div>
+  </div>
+</div>
+
+<!-- ===== Nav ===== -->
+<div class="nav">
+  <a href="#s1">品牌全览</a>
+  <a href="#s2">线上营销</a>
+  <a href="#s3">线下营销</a>
+  <a href="#s4">活动日历</a>
+  <a href="#s5">旗舰会员</a>
+  <a href="#s6">各店策略</a>
+  <a href="#s7">执行总纲</a>
+</div>
+
+<!-- ===== S1: 品牌全览 ===== -->
+<div class="section" id="s1">
+  <div class="section-tag">BRAND OVERVIEW</div>
+  <div class="section-title">🏪 小渔大海 · 品牌全览</div>
+  <div class="section-desc">天津海鲜火锅连锁标杆 · 一人一锅模式 · 5店覆盖全城</div>
+
+  <div class="store-bar">
+    <div class="store-bar-item"><div class="store-bar-name">🅰️ 梅江店</div><div class="store-bar-rating">★★★★☆ 4.6</div><div class="store-bar-info">¥114 · 高端社区型</div></div>
+    <div class="store-bar-item"><div class="store-bar-name">🅱️ 凌奥店</div><div class="store-bar-rating">★★★★☆ 4.6</div><div class="store-bar-info">¥145 · 商务宴请型</div></div>
+    <div class="store-bar-item"><div class="store-bar-name">🅲 华苑智慧山</div><div class="store-bar-rating">★★★★☆ 4.6</div><div class="store-bar-info">¥120 · 年轻复合型</div></div>
+    <div class="store-bar-item"><div class="store-bar-name">🅳 张家窝店</div><div class="store-bar-rating">★★★★★ 4.8</div><div class="store-bar-info">¥145 · 旗舰标杆型</div></div>
+    <div class="store-bar-item new" style="flex:1 1 100%"><div class="store-bar-name">🅴 天拖店 🆕</div><div class="store-bar-rating">✦ 暂无星级</div><div class="store-bar-info">新店 · 南开区天拖 · 零起步冲星</div></div>
+  </div>
+
+  <div class="card featured">
+    <div class="card-icon">📈</div>
+    <h4>品牌优势</h4>
+    <ul>
+      <li>4.6-4.8高评分，品质背书强</li>
+      <li>一人一锅模式，差异化明显</li>
+      <li>招牌烧饼已成爆品认知</li>
+      <li>5店连锁，品牌规模效应初显</li>
+    </ul>
+  </div>
+  <div class="card featured orange">
+    <div class="card-icon">⚡</div>
+    <h4>核心挑战</h4>
+    <ul>
+      <li>天拖新店零评分，需快速起量</li>
+      <li>各店各自为战，未形成品牌合力</li>
+      <li>私域/会员体系空白</li>
+      <li>夏季火锅品类天然淡季</li>
+    </ul>
+  </div>
+  <div class="card coral">
+    <div class="card-icon">🎯</div>
+    <h4>营销目标（90天）</h4>
+    <ul>
+      <li>品牌均分 4.65 → 4.7+</li>
+      <li>天拖新店 → 首月评分4.0+</li>
+      <li>旗舰会员开卡 1,000+ 张</li>
+      <li>储值锁资 ¥18万+/月</li>
+      <li>社群总规模 2,500+ 人</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== S2: 线上营销 ===== -->
+<div class="section" id="s2" style="background:linear-gradient(180deg,#F8FAFC 0%,#F5F2ED 100%);border-radius:20px 20px 0 0">
+  <div class="section-tag">ONLINE MARKETING</div>
+  <div class="section-title">📱 线上营销全链路</div>
+  <div class="section-desc">美团点评 × 抖音 × 小红书 × 社群私域 · 四位一体打透</div>
+
+  <div class="card featured">
+    <div class="card-icon">🟢</div>
+    <h4>美团 & 大众点评 · 根基阵地</h4>
+    <ul>
+      <li><b>星级冲刺：</b>新店30天冲4.0，老店稳4.6→4.7</li>
+      <li><b>团购矩阵：</b><span class="tag">引流款</span> ¥9.9冰镇柠檬茶 <span class="tag">利润款</span> ¥138双人海鲜锅 <span class="tag">旗舰款</span> ¥298四人海鲜宴</li>
+      <li><b>商户通投放：</b>天拖店日均¥30，老店¥15-20/天</li>
+      <li><b>评价管理：</b>收藏打卡送虾滑（合规）· 差评30分钟响应</li>
+      <li><b>必吃榜冲刺：</b>张家窝店4.8分 → 按必吃榜标准精细化运营</li>
+    </ul>
+  </div>
+
+  <button class="collapse-btn" onclick="toggle(this)">展开更多线上渠道 ▾</button>
+  <div class="collapse">
+    <div class="card">
+      <div class="card-icon">🎵</div>
+      <h4>抖音 · 年轻化破圈</h4>
+      <ul>
+        <li><b>达人矩阵：</b>10位KOC置换（免费餐换视频），预算¥0成本</li>
+        <li><b>内容方向：</b>"天拖新店开业"+"烧饼是灵魂"+"海鲜在跳舞"</li>
+        <li><b>团购上架：</b>抖音团购同步美团，差异化套餐</li>
+        <li><b>直播：</b>开业首月每周1场直播，推出直播间专享价</li>
+        <li><b>投放：</b>天拖店周边3km+凌奥/华苑年轻客群定向</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">📕</div>
+      <h4>小红书 · 种草沉淀</h4>
+      <ul>
+        <li><b>笔记策略：</b>"天津海鲜火锅天花板"+"一人一锅太香了"</li>
+        <li><b>素人铺量：</b>20篇素人笔记/月，人均¥50-80置换</li>
+        <li><b>关键词占位：</b>#天津美食 #海鲜火锅 #天拖美食 #一人一锅</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">💬</div>
+      <h4>社群私域 · 老客裂变</h4>
+      <ul>
+        <li><b>品牌总群：</b>"小渔大海·天津鲜友群" — 品牌公告+福利</li>
+        <li><b>各店分群：</b>梅江群/凌奥群/华苑群/张窝群/天拖群</li>
+        <li><b>裂变机制：</b>老客拉3位好友进群 → 送招牌烧饼兑换券</li>
+        <li><b>到店引流：</b>桌贴二维码"扫码入群领¥5券"</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="data-grid">
+    <div class="data-item"><div class="data-num">50+</div><div class="data-label">团购SKU</div></div>
+    <div class="data-item"><div class="data-num">30+</div><div class="data-label">达人/篇/月</div></div>
+    <div class="data-item"><div class="data-num">2,500+</div><div class="data-label">社群人数</div></div>
+    <div class="data-item"><div class="data-num">4.7</div><div class="data-label">目标评分</div></div>
+  </div>
+</div>
+
+<!-- ===== S3: 线下营销 ===== -->
+<div class="section" id="s3">
+  <div class="section-tag">OFFLINE MARKETING</div>
+  <div class="section-title">🏪 线下营销全链路</div>
+  <div class="section-desc">门店体验 × 地推渗透 × 异业合作 × 品牌物料</div>
+
+  <div class="card featured">
+    <div class="card-icon">🏠</div>
+    <h4>门店体验升级</h4>
+    <ul>
+      <li><b>明档海鲜展示：</b>门口设鲜活海鲜池 + 现杀现煮演示</li>
+      <li><b>烧饼现烤区：</b>门口设烧饼明档，香气引流</li>
+      <li><b>打卡点设计：</b>品牌墙 + 海鲜冰柜背景墙</li>
+      <li><b>桌贴二维码：</b>引导扫码入群/收藏打卡/评价</li>
+      <li><b>收银区：</b>旗舰会员展示牌，结账时引导开卡</li>
+    </ul>
+  </div>
+
+  <button class="collapse-btn" onclick="toggle(this)">展开更多线下策略 ▾</button>
+  <div class="collapse">
+    <div class="card">
+      <div class="card-icon">📢</div>
+      <h4>地推渗透</h4>
+      <ul>
+        <li><b>天拖店：</b>周边3km小区地推 + 物业合作电梯广告</li>
+        <li><b>梅江店：</b>高端小区电梯广告 + 业主群投放</li>
+        <li><b>凌奥店：</b>产业园企业拜访 + 办公楼传单</li>
+        <li><b>华苑店：</b>大学城食堂发单 + 学生群推广</li>
+        <li><b>张家窝：</b>南站出站口宣传 + 周边小区渗透</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">🤝</div>
+      <h4>异业合作</h4>
+      <ul>
+        <li><b>电影联动：</b>天拖周边影院 → 持票根到店享8折</li>
+        <li><b>KTV联动：</b>凌奥/华苑周边KTV → 消费送火锅优惠券</li>
+        <li><b>酒店合作：</b>凌奥威斯顿酒店住客享专属折扣</li>
+        <li><b>企业团餐：</b>凌奥/华苑企业午间团餐协议</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-icon">🖼️</div>
+      <h4>品牌物料标准化</h4>
+      <ul>
+        <li><b>统一VI：</b>深海蓝+珊瑚橙品牌色 · 5店统一调性</li>
+        <li><b>菜单升级：</b>菜品图统一拍摄 + 招牌菜突出标注</li>
+        <li><b>店员话术：</b>标准化接待流程</li>
+        <li><b>外卖包装：</b>品牌定制打包袋 + 好评卡</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S4: 活动日历 ===== -->
+<div class="section" id="s4" style="background:linear-gradient(180deg,#F5F2ED 0%,#F8FAFC 100%);border-radius:20px">
+  <div class="section-tag">ACTIVITY CALENDAR</div>
+  <div class="section-title">📅 90天活动日历</div>
+  <div class="section-desc">按周排期 · 线上+线下打配合 · 节奏紧凑不落空</div>
+
+  <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <table class="plan-table">
+      <thead>
+        <tr><th>时间</th><th>主题</th><th>动作</th><th>目标</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><b>第1周</b></td><td>🏗️ 筹备期</td><td>新店美团页预上线·团购上架·社群建群·物料到位·培训</td><td>全部0准备</td></tr>
+        <tr><td><b>第2周</b></td><td>🚀 天拖开业冲量</td><td>¥68双人餐限量800份·商户通¥30/天·周边3km地推</td><td>团购核销100单</td></tr>
+        <tr><td><b>3-4周</b></td><td>📸 评价攻坚</td><td>收藏打卡送虾滑·好评引导·差评30分响应</td><td>天拖评分≥4.0</td></tr>
+        <tr><td><b>5-6周</b></td><td>👥 会员开卡月</td><td>旗舰会员上线·储值满赠·社群裂变·店员推卡</td><td>开卡500张</td></tr>
+        <tr><td><b>7-8周</b></td><td>🎬 达人造势</td><td>10位KOC探店·小红书20篇素人铺量</td><td>曝光量50万+</td></tr>
+        <tr><td><b>9-10周</b></td><td>🔥 老带新裂变</td><td>购¥200赠天拖¥30券·老带新积分翻倍·老店推天拖</td><td>老店→天拖导流300桌</td></tr>
+        <tr><td><b>11-12周</b></td><td>🏆 必吃榜冲刺</td><td>张家窝收藏+评价+质量全面提升·服务SOP升级</td><td>必吃榜标准达标</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ===== S5: 旗舰会员 ===== -->
+<div class="dark-section-bg" id="s5">
+  <div class="section-tag" style="color:#E9C46A;background:rgba(233,196,74,0.12);border:none">FLAGSHIP MEMBER</div>
+  <div class="section-title">🏆 旗舰会员体系</div>
+  <div class="section-desc">储值锁客 × 老带新裂变 × 跨店通兑 · 一卡锁定高价值顾客</div>
+
+  <div class="dark-card">
+    <div style="font-size:1.2rem;margin-bottom:0.3rem">🥉</div>
+    <h4>海星会员 · 免费入</h4>
+    <ul>
+      <li>入会门槛：扫码免费注册</li>
+      <li>权益：积分累计、生日券</li>
+      <li>功能：为旗舰会员做蓄水池</li>
+      <li>目标：首月注册2,000+人</li>
+    </ul>
+  </div>
+  <div class="dark-card">
+    <div style="font-size:1.2rem;margin-bottom:0.3rem">🥈</div>
+    <h4>海贝会员 · 消费升级</h4>
+    <ul>
+      <li>门槛：年消费满¥800 自动升级</li>
+      <li>权益：满减券×2、新品试吃</li>
+      <li>功能：筛选高价值顾客</li>
+      <li>目标：转化率≥15%</li>
+    </ul>
+  </div>
+  <div class="dark-card gold-border">
+    <div style="font-size:1.2rem;margin-bottom:0.3rem">🥇</div>
+    <h4 style="color:#E9C46A">🏆 旗舰会员 · 核心王牌</h4>
+    <ul>
+      <li>门槛：储值¥300 / 付费¥28办卡</li>
+      <li>🔥 特权：烧饼每次送+全场9折+跨店通用</li>
+      <li>🔥 特权：生日免费锅底+每月8号双倍积分</li>
+      <li>🔥 特权：老带新积分翻倍</li>
+      <li>目标：首月开卡1,000张·储值回款¥18万+</li>
+    </ul>
+  </div>
+
+  <button class="collapse-btn" onclick="toggle(this)" style="color:#E9C46A;background:rgba(233,196,74,0.08);border-color:rgba(233,196,74,0.2)">展开更多会员方案 ▾</button>
+  <div class="collapse">
+    <div class="dark-card">
+      <div style="font-size:1.2rem;margin-bottom:0.3rem">🔄</div>
+      <h4>老带新裂变</h4>
+      <ul>
+        <li>老客分享专属优惠券给朋友</li>
+        <li>朋友到店核销→老客得积分</li>
+        <li>每成功带1人=200积分（≈¥2）</li>
+        <li>每月评选"带单王"送霸王餐</li>
+      </ul>
+    </div>
+    <div class="dark-card">
+      <div style="font-size:1.2rem;margin-bottom:0.3rem">💳</div>
+      <h4>储值方案</h4>
+      <ul>
+        <li>充¥300送¥30（≈9折）</li>
+        <li>🔥 充¥500送¥80（≈8.6折）主推</li>
+        <li>充¥1,000送¥200 + 旗舰年卡直通</li>
+        <li>天拖新店：开业首月储值多送5%</li>
+      </ul>
+    </div>
+    <div class="dark-card">
+      <div style="font-size:1.2rem;margin-bottom:0.3rem">🎫</div>
+      <h4>次卡套餐</h4>
+      <ul>
+        <li>¥299五锅卡（≈5折·锁定5次消费）</li>
+        <li>¥99双人微醺套餐（新客尝鲜）</li>
+        <li>跨店通用：储值/次卡 5店任意消费</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S6: 各店策略 ===== -->
+<div class="section" id="s6">
+  <div class="section-tag">STORE STRATEGY</div>
+  <div class="section-title">📍 五店差异化营销策略</div>
+  <div class="section-desc">统一品牌不同打法 · 各店匹配商圈特性</div>
+
+  <div class="timeline">
+    <div class="tl-item" data-num="1">
+      <h4>🏠 梅江店 · 社区深耕 · 稳评分提复购</h4>
+      <p>¥114/4.6 → 目标4.7 | 梅江高端社区 · 家庭聚会首选</p>
+      <ul>
+        <li>线上：¥88双人引流 + ¥258家庭套餐 + 老客社群复购提醒</li>
+        <li>线下：小区电梯广告 + 业主群投放 + 物业合作</li>
+        <li>会员：社群里推旗舰会员，以家庭为单位推储值</li>
+        <li>夏季破局：冰镇海鲜塔¥168 + 精酿啤酒套餐</li>
+      </ul>
+    </div>
+    <div class="tl-item" data-num="2">
+      <h4>💼 凌奥店 · 商务升级 · 企业团餐</h4>
+      <p>¥145/4.6 → 目标4.7 | 凌奥创意产业园 · 商务宴请首选</p>
+      <ul>
+        <li>线上：¥498商务宴套餐 + 抖音"凌奥吃海鲜"种草</li>
+        <li>线下：园区企业拜访签"企业用餐协议" + 包间升级</li>
+        <li>会员：企业客户推储值¥1,000档（锁定商务接待）</li>
+        <li>招牌放大：烧饼做成"凌奥必点"标签</li>
+      </ul>
+    </div>
+    <div class="tl-item" data-num="3">
+      <h4>🎓 华苑智慧山 · 年轻化 · 大学城渗透</h4>
+      <p>¥120/4.6 → 目标4.7 | 白领午餐 + 学生聚餐</p>
+      <ul>
+        <li>线上：午市¥68单人小火锅限时1小时 + 学生证8.8折</li>
+        <li>线下：大学城发传单 + 学生社群推广 + 探校达人置换</li>
+        <li>会员：推¥99双人次卡（学生/白领友好价）</li>
+      </ul>
+    </div>
+    <div class="tl-item" data-num="4">
+      <h4>🏆 张家窝 · 必吃榜冲刺 · 旗舰店</h4>
+      <p>¥145/4.8 → 目标必吃榜上榜 | 全品牌标杆</p>
+      <ul>
+        <li>线上：按必吃榜标准运营·评价质量+收藏量+核销率全面提升</li>
+        <li>线下：南站出站口引流"到天津第一顿海鲜"</li>
+        <li>会员：作为旗舰会员样板店，业绩数据打给其他店看</li>
+        <li>品牌背书：4.8分 = 说服老板+其他店运营的案例</li>
+      </ul>
+    </div>
+    <div class="tl-item" data-num="5" style="border-left:2px solid rgba(233,196,74,0.3)">
+      <h4>🎯 天拖店 · 新店开业 · 零起步冲星</h4>
+      <p>暂无星级 → 30天冲4.0 → 90天4.5 | 南开区天拖</p>
+      <ul>
+        <li>线上：¥68双人餐冲量 + 商户通投放 + 收藏打卡送虾滑</li>
+        <li>线下：周边3km地毯式地推 + 老店台卡引流 + 物业合作</li>
+        <li>会员：开业首月储值多送5% + 旗舰会员开业限定福利</li>
+        <li>评价：每条评价必回复 · 差评30分响应 · 首月目标200好评</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- ===== S7: 执行总纲 ===== -->
+<div class="section" id="s7" style="background:linear-gradient(180deg,#F8FAFC 0%,#F5F2ED 100%);border-radius:20px 20px 0 0;padding-bottom:2.5rem">
+  <div class="section-tag">EXECUTION BLUEPRINT</div>
+  <div class="section-title">📝 执行总纲</div>
+  <div class="section-desc">给老板看的终极版本 · 一句话讲清楚</div>
+
+  <div class="summary-box">
+    <div class="summary-grid">
+      <div class="summary-item">
+        <h4>🎯 三大目标</h4>
+        <ul>
+          <li>4家老店均分4.65→4.7+</li>
+          <li>天拖新店90天→4.5</li>
+          <li>张家窝冲刺必吃榜</li>
+        </ul>
+      </div>
+      <div class="summary-item">
+        <h4>💡 三大引擎</h4>
+        <ul>
+          <li>美团收银连锁版·一统5店数据</li>
+          <li>旗舰会员·储值+裂变+跨店通兑</li>
+          <li>老店带新店·从4.8到新店无缝引流</li>
+        </ul>
+      </div>
+      <div class="summary-item">
+        <h4>💰 三大回报</h4>
+        <ul>
+          <li>月储值锁资¥18万+现金流</li>
+          <li>人力+采购省¥6-10万/月</li>
+          <li>品牌评分4.7+ → 长期溢价</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="highlight-bar">
+      <p>💡 一句话给老板：<b>美团收银连锁版帮您一统5店数据，旗舰会员锁客锁资，老店带新店低成本拓客，月省¥6-10万、月锁资¥18万+</b></p>
+    </div>
+
+    <div class="contact-box">
+      <div class="contact-card" style="background:rgba(42,157,143,0.04);border-color:rgba(42,157,143,0.15)">
+        <h4>👤 对接人 & 联系方式</h4>
+        <p><b>BD：娄苏</b> · 美团地面产品销售<br>美团智能收银 · 助力餐饮数字化</p>
+      </div>
+      <div class="contact-card" style="background:rgba(233,196,74,0.04);border-color:rgba(233,196,74,0.15)">
+        <h4>📄 方案链接</h4>
+        <p style="word-break:break-all;font-size:0.65rem">https://lousu123.github.io/xiaoyu-dahai-marketing/</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+  <p>本方案由 <strong>娄苏 · 业务开发-地面产品销售</strong> 出品 · 美团智能收银</p>
+</div>
+
+<script>
+// Toggle collapse
+function toggle(btn) {
+  var collapse = btn.nextElementSibling;
+  collapse.classList.toggle('show');
+  btn.textContent = collapse.classList.contains('show') ? '收起 ▴' : btn.textContent.replace('▴','▾').replace('展开','展开');
+  if(!btn.textContent.includes('展开')) btn.textContent = '收起 ▴';
+}
+
+// Scroll animations
+var els = document.querySelectorAll('.card, .tl-item, .store-bar-item, .dark-card, .data-item');
+els.forEach(function(el){ el.classList.add('fade-in') });
+
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible') }
+  });
+}, { threshold: 0.1 });
+
+els.forEach(function(el){ observer.observe(el) });
+
+// Nav scroll spy
+var links = document.querySelectorAll('.nav a');
+var secs = document.querySelectorAll('[id^="s"]');
+window.addEventListener('scroll', function(){
+  var cur = '';
+  secs.forEach(function(s){
+    if(window.scrollY >= s.offsetTop - 120) cur = s.getAttribute('id');
+  });
+  links.forEach(function(a){
+    a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+  });
+});
+</script>
+</body>
+</html>
